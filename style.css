@@ -1,0 +1,154 @@
+:root {
+    --bc-alert: #F03E3E;
+    --bc-button: #02799D;
+    --bc-button-hover: #12596f;
+    --bc-input: #DCE2E9;
+    --fc-body: #00453A;
+    --fc-button: #FFFFFF;
+    --fc-heading: #0C3440;
+    --fc-input: #212529;
+    --lc-input: #02799D;
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #040924;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+
+.title {
+    color: var(--fc-heading);
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: 4rem;
+    margin-bottom: 3.2rem;
+}
+
+.container {
+    align-items: center;
+    display: grid;
+    height: 100vh;
+    justify-items: center;
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.6rem;
+    box-shadow: 0  0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 4.8rem 6.4rem;
+    width: min(44.0rem, 80%);
+}
+
+label {
+    color: var(--fc-body);
+    line-height: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    background-color: var(--bc-input);
+    border: solid 1px #495057;
+    border-radius: 0.4rem;
+    color: var(--fc-input);
+    padding: 1.6rem;
+}
+
+input:focus {
+    outline: solid 2px var(--lc-input)
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 1.6rem;
+    transition: background .3s ;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    background-color: var(--bc-button);
+    border-radius: 0.4rem;
+    color: var(--fc-button);
+    margin: 1.6rem 0;
+}
+
+form button:hover {
+    background-color: var(--bc-button-hover);
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.6rem;
+}
+
+.modal-wrapper {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: grid;
+    inset: 0;
+    justify-items: center;
+    opacity: 0;
+    place-content: center;
+    position: absolute;
+    visibility: hidden;
+}
+
+.modal {
+    position: relative;
+    text-align: center;
+    width: min(40rem, 75%);
+}
+
+.modal button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 1.6rem;
+    top: 1.6rem;
+    transition: transform .3s;
+}
+
+.modal button:hover {
+    transform: scale(1.1)
+}
+
+.modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.error-alert {
+    background-color: var(--bc-alert);
+    color: var(--fc-button);
+    font-weight: bold;
+    left: 0;
+    opacity: 0;
+    padding: 0.8rem 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    transform: translateY(-3rem);
+    transition: transform 0.5s;
+    visibility: hidden;
+}
+
+.error-alert.open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
